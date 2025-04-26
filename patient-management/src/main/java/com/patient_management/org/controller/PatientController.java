@@ -51,6 +51,11 @@ public class PatientController {
 	
 	}
 	
+	@GetMapping("/{id}")
+	public ResponseEntity<PatientReponseDTO> getPatientHandler(@PathVariable UUID id) {
+		return ResponseEntity.ok(patientServiceImpl.getPatient(id));
+	}
+	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deletePatientHandler(@PathVariable UUID id) {
 		patientServiceImpl.deletePatient(id);
