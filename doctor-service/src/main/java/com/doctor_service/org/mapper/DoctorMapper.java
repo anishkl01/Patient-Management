@@ -1,7 +1,5 @@
 package com.doctor_service.org.mapper;
 
-import org.springframework.http.ResponseEntity;
-
 import com.doctor_service.org.dto.DoctorRequestDTO;
 import com.doctor_service.org.dto.DoctorResponseDTO;
 import com.doctor_service.org.entity.Doctor;
@@ -15,6 +13,7 @@ public class DoctorMapper {
 				.specialization(doctorRequestDTO.getSpecialization())
 				.availableDays(doctorRequestDTO.getAvailableDays())
 				.timings(doctorRequestDTO.getTimings())
+				.phone(doctorRequestDTO.getPhone())
 				.build();
 	}
 	
@@ -26,6 +25,7 @@ public class DoctorMapper {
 				.specialization(doctor.getSpecialization())
 				.timings(doctor.getTimings())
 				.phone(doctor.getPhone())
+				.availableDays(doctor.getAvailableDays())
 				.build();
 
 	}
